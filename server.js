@@ -44,3 +44,8 @@ async function findOrCreateDocument(id) {
   if (document) return document
   return await Document.create({ _id: id, data: defaultValue })
 }
+
+const PORT = process.env.PORT || 3001
+server.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}`)
+})
